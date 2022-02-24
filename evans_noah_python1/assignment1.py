@@ -33,8 +33,9 @@ In Python, a variable is a name attached to a piece of data. You first define a 
 '''
 
 # Initialize two string variables
-first_name = "John"
-last_name = "Doe"
+my_age = 22
+first_name = "Noah"
+last_name = "Evans"
 
 '''
 A string is a value made up of text and is one of the simplest data types in any language. Much of the information that’s passed within and between programs is strings.
@@ -62,6 +63,10 @@ print("Hi, my name is {} {}".format(first_name, last_name))
 #TODO: Try introducing yourself and add your age as well. On top of first_name & last_name variable add another variable called my_age and set it to a number. 
 # Then try concatenating it using the above four strategies.  
 
+print("Hello there, my name is " + first_name + " " + last_name + " and I am " + my_age.__str__() + " years old.")
+print("Hello there, my name is %s %s and I am %s years old." % (first_name, last_name, str(my_age)))
+print("Hello there, my name is " + " ".join([first_name, last_name]) + " and I am " + " ".join([str(my_age)]) + " years old.")
+print("Hello there, my name is {} {} and I am {} years old.".format(first_name, last_name, str(my_age)))
 
 print("-------------------------------------------------------------------------------\n")
 
@@ -143,24 +148,32 @@ while while_loop_index < 10:
 A nested loop is a loop inside another loop. Say you need a loop that examines every pixel in an image. You could write a loop that looks at each pixel in a row and, inside that loop, add a second loop that looks at every pixel in the current column for that row.
 '''
 #TODO: write a for loop to ONLY print even numbers
-
+for numrang in range(21):
+    if numrang % 2 == 0:
+        print(numrang)
+    else:
+        pass;
 
 
 #TODO: Declare an Array with mixed data types. i.e. string, number, boolean, etc. 
 # Iterate through this list using for loop and see the output. 
-
-
+my_array = [1776, "Chuck 'The Ice man' Liddell", True, None, 1.365, {'water': 'purified'}]
+for item in my_array:
+    print(item)
 
 #TODO: Print the data type for each array item. 
-
+for item in my_array:
+    print(type(item))
 
 
 # TODO: Reverse a String: input = hello, output = olleh
-
+my_key_word = 'hello'
+print(my_key_word[::-1])
 
 
 # TODO: Reverse a number: input = 1234, output = 4321
-
+my_key_number = 1234
+print(str(my_key_number)[-1::-1])
 
 
 '''
@@ -219,7 +232,13 @@ for index, fruit in enumerate(my_list):
 
 #TODO: Using a for loop update every item in the my_list list into dessert items
 # dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
-
+dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
+dessert_index = 0
+for fruit, index in enumerate(my_list):
+    my_list.pop(0)
+    my_list.append(dessert[dessert_index])
+    dessert_index += 1
+print(my_list)
 
 
 print("-------------------- Dictionary ---------------------------------\n")
@@ -260,3 +279,23 @@ for key, value in country_capital_dict.items():
 #TODO: Create 5 lists of real life items and create 5 dictionaries. For example, 
 # for list, I would create a list for list of chores I need to do on weekends. i.e chores = ['laundry', 'pick-up mail', 'clean the apt']
 # for dictionary, I would have friends to phone number. friends = {'jose': '718-233-6464', 'ali': '646-232-2323'}
+list_one_books_in_my_room = ['Harry Potter: The goblet of fire', "The Jerusalem Bible: Reader's edition", 'Thinking like an Economist', 'Hunger games', 'Art Law: Cases and Material']
+list_two_mt_rushmore_heads = ['George Washington', 'Thomas Jefferson', 'Abraham Lincoln', 'Theodore Roosevelt']
+list_three_weights_in_my_barbell_set_lbs = [10, 10, 15, 15, 25, 25, 45, 45]
+list_four_songs_i_can_play_on_guitar = ['TnT', 'Back in Black', 'Folsom Prison Blues', 'I Walk the Line', 'Hurt', 'Come As You Are', 'Smells Like Teen Spirit', 'Brain Stew', 'Wake Me Up When September Ends', 'Enter Sandman', 'Sweet Home Alabama']
+list_five_states_been_visited = ['Michigan', 'Ohio','Indiana', 'Illinois', 'Kentucky', 'Wisconsin', 'Tennessee', 'Georgia', 'Florida', 'West Virginia', 'North Carolina', 'South Carolina', 'Pennsylvania', 'New York', 'Texas', 'California']
+dict_one_english_to_french_numbers = {"one": "un", "two": "deux", "three": "trois", "four": "quatre", "five": "cinq", "six": "six", "seven": "sept", "eight": "huit", "nine": "neuf"}
+dict_two_big_10_east = {"Michigan": "Wolverines", "Ohio State": "Buckeyes", "Michigan State": "Spartans", "Penn State": "Nittany Lions", "Maryland": "Terrapins", "Indiana": "Hoosiers", "Rutgers": "Scarlet Knights"}
+dict_three_car = {'year': 2012, 'Make': 'Mercedes-Benz', 'Model': 'C300', 'Trim': '4MATIC Luxury', 'Engine Type': 'V6', 'Drivetrain': 'AWD', 'MPG City': 18, 'MPG Highway': 25}
+dict_four_last_semester_college = {'Financial Markets and Economy': 'Dr. Tracy', 'Economics of International Finance': 'Dr. Coppin', 'Managerial Finance': 'Dr. Qian', 'Consumer and Welfare Economics': 'Dr. Zhao', 'Big Data': 'Dr. Hodge', 'Special Topics in Economics': 'Dr. Sieber', 'Management Strategies and Policy': 'Dr. Stoutemire'}
+dict_five_military_code = {'A': 'Alpha', 'B': 'Bravo', 'C': 'Charlie', 'D': 'Delta', 'E': 'Echo', 'F': 'Foxtrot', 'G': 'Golf', 'H': 'Hotel', 'I': 'india', 'J': 'Juliet', 'K': 'Kilo', 'L': 'Lima', 'M': "Mike", "N": "November", 'O': 'Oscar', "P": "Papa", "Q": "Quebec", 'R': 'Romeo', 'S': 'Sierra', "T": 'Tango', 'U': 'Uniform', 'V': 'Victor', 'W': 'Whiskey', 'X': 'X-Ray', 'Y': 'Yankee', 'Z': 'Zulu'}
+print(list_one_books_in_my_room)
+print(list_two_mt_rushmore_heads)
+print(list_three_weights_in_my_barbell_set_lbs)
+print(list_four_songs_i_can_play_on_guitar)
+print(list_five_states_been_visited)
+print(dict_one_english_to_french_numbers)
+print(dict_two_big_10_east)
+print(dict_three_car)
+print(dict_four_last_semester_college)
+print(dict_five_military_code)
